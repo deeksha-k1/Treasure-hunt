@@ -1,0 +1,85 @@
+{% extends "treasurehunt/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="l-grid__item l-grid__item--sticky">
+	<div class="c-card u-bg--light-gradient u-text--dark">
+	  <div class="c-card__body">
+		<div class="u-display--flex u-justify--space-between">
+		  <div class="u-text--left">
+			<div class="u-text--small">My Rank</div>
+			<h2>3rd Place</h2>
+		  </div>
+		  <div class="u-text--right">
+			<div class="u-text--small">My Score</div>
+			<h2>24</h2>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- <div class="c-card">
+	  <div class="c-card__body">
+		<div class="u-text--center" id="winner"></div>
+	  </div>
+	</div> -->
+  </div>
+  <div class="l-grid__item">
+	<div class="c-card">
+	  <div class="c-card__header">
+		<h3>Leaderboard</h3>
+		<select class="c-select">
+		  <option selected="selected">Sunday, Feb. 23 - Sunday, Feb. 30</option>
+		</select>
+	  </div>
+	  <div class="c-card__body">
+		<ul class="c-list" id="list">
+		  <li class="c-list__item">
+			<div class="c-list__grid">
+			  <div class="u-text--left u-text--small u-text--medium">Rank</div>
+			  <div class="u-text--left u-text--small u-text--medium">Name</div>
+			  <div class="u-text--right u-text--small u-text--medium"># Points</div>
+			</div>
+		  </li>
+		  {% for x,y,z in user_name  %}
+		  <li class="c-list__item">
+			<div class="c-list__grid">
+				<div class="c-flag c-place u-bg--transparent">1</div>
+				<div class="c-media">
+					<div class="c-media__content">
+						<div class="c-media__title">{{x}}</div>
+						<a class="c-media__link u-text--small" href="#">{{z}}</a>
+						
+					</div>
+				</div>
+				<div class="u-text--right c-kudos">
+					<div class="u-mt--8">
+						<strong>{{y}}</strong>
+						<span id='random-imoji'></span>
+					</div>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+		</ul>
+	  </div>
+	</div>
+  </div>
+                                 
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

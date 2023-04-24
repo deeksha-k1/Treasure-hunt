@@ -1,0 +1,44 @@
+{% extends "treasurehunt/base.html" %}
+{% block content %}
+{% load static %}
+<br><br><br><br><br>
+<!-- Login Container -->
+{% for message in messages %}
+
+<div class="alert alert-success">
+    <a class="close" href="#" data-dismiss="alert">×</a>
+
+    {{ message }}
+
+</div>
+{% endfor %}
+<div class="login">
+  <form class="contact-from" action="{% url 'treasurehunt:login' %}" method="post">
+    <div class="container">
+      {% csrf_token %}
+      <br>
+      <h1>Login</h1>
+      <br>
+      <p>Login to your account using your credentials.</p>
+      <hr>
+      <div class="col-md-6">
+      <input class="text" type="text" name="username" placeholder="Username" required="">
+      </div>
+      <div class="col-md-6">
+      <input class="text" type="password" name="password" placeholder="Password" required="">
+      </div>
+      <br>
+      <br>
+      <div class="col-md-3">
+      <input class="btn btn-outline-primary" type="submit" value="Login">
+      </div>
+      <br>
+      <br>
+      <hr>
+      <p>Not a member ? <a href="{% url 'treasurehunt:register' %}">Sign Up </a></p>
+
+    </div>
+  </form>
+</div>
+<!-- Login Container End -->
+{% endblock content %}
